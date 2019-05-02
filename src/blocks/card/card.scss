@@ -3,70 +3,109 @@
 // Очередность: http://nicothin.github.io/idiomatic-pre-CSS/#priority
 
 .card {
-
   $block-name:                &; // #{$block-name}__element
 
-  position: relative;
-  z-index: 0;
+  @include pd($typo-margin-vertical);
+  width: 100%;
+  max-width: 300px;
 
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  min-width: 200px;
-  padding: 0 15px;
-  margin-bottom: 30px;
+  border: 1px solid $border-color;
+  border-radius: $border-radius;
+  padding-bottom: $typo-margin-vertical * 3;
 
-  &__inner {
+  & > :not(:last-child) {
     position: relative;
 
-    display: flex;
-    flex-direction: column;
-    flex-grow: 1;
-    align-items: center;
-    width: 100%;
-    margin-bottom: 20px;
+    padding-top: $typo-margin-vertical;
+    padding-bottom: $typo-margin-vertical;
+
+    &::after {
+      @include size(calc(100% + 1em), 1px);
+
+      content: '';
+      position: absolute;
+      bottom: 0;
+      left: -0.5em;
+
+      background-color: $border-color;
+    }
   }
 
-  &__img-wrap {
-    display: block;
-    flex-shrink: 0;
-    margin-bottom: 20px;
+  .field-radio {
+
+    &__name { // label
+      display: flex;
+    }
+
+    &__name-text {
+
+      &--label {
+        display: inline-flex;
+        align-self: center;
+        min-height: $line-height + $field-padding-vertical + $field-padding-vertical;
+      }
+    }
+
+    &__input {
+
+      &:checked ~ .btn { // stylelint-disable-line
+        display: block;
+      }
+
+      &:checked ~ .field-radio__name-text--label { // stylelint-disable-line
+        display: none;
+      }
+    }
   }
 
-  &__img {
-    display: block;
+  .btn {
+    z-index: 1;
+
+    display: none;
   }
 
   &__title {
-    margin: 0 0 20px;
+    font-weight: 500;
+    text-align: center;
   }
 
-  &__new {
-    position: absolute;
-    z-index: 1;
-    top: 0;
-    left: 50%;
-
-    padding: 5px 10px;
-
-    line-height: 1;
-    font-weight: 700;
-    color: #fff;
-
-    background: $color-success;
-    transform: translateX(-50%) rotate(-10deg);
+  &__list {
+    list-style-type: none;
   }
 
-  &__price {
-    flex-shrink: 0;
-    margin: auto 0 0;
+  &__feature {
+    @include mg-bottom($typo-margin-vertical / 2); // li
+    position: relative;
 
-    font-size: $font-size-h3;
-    font-weight: 700;
-    line-height: 1;
+    padding-left: 0.75em;
+
+    &::before {
+
+      @include round(6px);
+      content: '';
+      position: absolute;
+      top: 0.5em;
+      left: 0;
+
+      background-color: $color-main;
+    }
   }
 
-  &__buy {
-    flex-shrink: 0;
+  &__text {
+    text-align: center;
+
+    &--price {
+      margin-top: $typo-margin-vertical;
+    }
+  }
+
+  &__wrapper {
+
+    &--select {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      padding-top: $typo-margin-vertical;
+    }
   }
 }

@@ -1,23 +1,51 @@
 extends ../pug/layout.pug
 
 block meta
-  title Pasco — main page
+  title Voverc — Select a plan for your trial
   meta(name='description', content='')
 
 //- block append head
 //-   link(rel='stylesheet', href='css/some.css')
 
 block header
-  +page-header()
+  //- +page-header()
     +logo('/')
       img(src='img/demo-logo.svg', alt='Logo', width='64', height='15')
     +main-nav('10')
 
 block content
-  +b.BUTTON.button
-    span Button
+  +b.SECTION.trial
+    +e.inner.inner
+      +e.OL.list
+        +e.LI.item
+          +b.UL.plan
+            +e.LI.item
+              +b.ARTICLE.card
+                +e.H3.title Premium™
+                +e.UL.list
+                  +e.LI.feature Unlimited users
+                  +e.LI.feature Toll-free or local number
+                  +e.LI.feature 1,500 toll-free min/mo
+                  +e.LI.feature 50 people per video meeting
+                  +e.LI.feature Unlimited internet fax
+                +e.wrapper
+                  +e.P.text
+                    b Price after the trial
+                  +e.P.text--price from #[b $ 44.99] /user/month
+                +e.wrapper--select
+                  +b.field-radio
+                    +e.input-wrap--trial
+                      +e.LABEL.name
+                        +e.INPUT.input(type='radio', name='radio')
+                        +e.SPAN.name-text
+                        +e.SPAN.name-text--label Select this plan
+                        +btn('Continue', 'main')(href='/')
 
-  +btn('hello', 'there hi')
+
+
+
+
+  //- +btn('hello')
 
 block footer
   +page-footer()

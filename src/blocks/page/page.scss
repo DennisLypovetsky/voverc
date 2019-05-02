@@ -36,6 +36,8 @@
     min-height: 100vh;
     display: flex;
     flex-direction: column;
+
+    overflow: hidden;
   }
 
   &__content {
@@ -194,13 +196,14 @@ h3,
 h4,
 h5,
 h6 {
-  display: block;
   z-index: 1;
-  margin-top: 1em;
-  margin-bottom: 0.5em;
-  font-family: $font-family;
+
+  display: block;
+  margin: unset;
+
+  font-family: $font-family--heading;
   font-weight: 700;
-  line-height: 1.2;
+  line-height: $line-height--heading;
   color: currentColor;
 }
 
@@ -220,8 +223,10 @@ blockquote,
 pre,
 address,
 figure {
-  margin-top: 0;
-  margin-bottom: $typo-margin-vertical;
+  margin: unset;
+  padding: unset;
+  // @include mg-bottom($typo-margin-vertical);
+  // margin-bottom: $typo-margin-vertical;
 }
 
 address {
@@ -230,13 +235,11 @@ address {
 
 ul,
 ol {
-  margin-bottom: $typo-margin-vertical;
-  padding-left: 1.5em;
 
   ul,
   ol {
-    margin-top: 0;
-    margin-bottom: 0;
+    margin-top: unset;
+    margin-bottom: unset;
   }
 }
 
@@ -276,19 +279,19 @@ sup {
 //   padding: 0.1em 0.3em;
 // }
 
-b,
-strong {
-  font-weight: bolder;
-}
+// b,
+// strong {
+//   font-weight: inherit;
+// }
 
 // abbr[title] {
 //   text-decoration: underline dotted;
 // }
 
 blockquote {
-  padding: 0;
-  margin-left: 0;
-  margin-right: 0;
+  padding: unset;
+  margin-left: unset;
+  margin-right: unset;
 }
 
 // samp,

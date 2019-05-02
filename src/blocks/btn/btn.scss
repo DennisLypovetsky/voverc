@@ -6,6 +6,7 @@
   box-sizing: border-box;
 
   display: inline-block;
+  min-width: 180px;
   max-width: 100%;
   vertical-align: middle;
   padding: $field-padding-vertical  $field-padding-horizontal;
@@ -15,18 +16,19 @@
   font-size: 1em;
   line-height: $line-height;
   color: $text-color;
-  text-transform: none;
-  // border: 1px solid $gray-lighter;
-  border: 0;
+  text-transform: unset;
+  text-overflow: ellipsis;
+  text-align: center;
+  text-decoration: unset;
+  white-space: nowrap;
+
+  border: unset;
   border-radius: $border-radius;
   background-color: $gray-lightest;
-  background-image: none;
+  background-image: unset;
   overflow: hidden;
-  white-space: nowrap;
-  text-overflow: ellipsis;
+
   user-select: none;
-  text-align: center;
-  text-decoration: none;
   cursor: pointer;
 
   &:hover,
@@ -68,23 +70,31 @@
 
 
 
-  // &--main {
-  //   color: #fff;
-  //   background-color: $color-main;
-  //   // border: 1px solid $color-main;
+  &--main {
+    color: #fff;
 
-  //   &:hover,
-  //   &:focus {
-  //     color: #fff;
-  //     background-color: darken($color-main, 10%);
-  //     // border-color: darken($color-main, 12%);
-  //   }
+    background-color: $color-main;
+    // border: 1px solid $color-main;
 
-  //   &--disabled,
-  //   &:disabled {
-  //     color: #fff;
-  //     background-color: $color-main;
-  //     // border-color: $color-main;
-  //   }
-  // }
+    &:hover,
+    &:focus {
+      color: #fff;
+
+      background-color: darken($color-main, 10%);
+      // border-color: darken($color-main, 12%);
+    }
+
+    &--disabled,
+    &:disabled {
+      color: #fff;
+
+      background-color: $color-main;
+      // border-color: $color-main;
+    }
+
+    &:active,
+    &:focus {
+      @include field-focus($color-main);
+    }
+  }
 }
