@@ -1,0 +1,26 @@
+extends ../pug/layout.pug
+
+block meta
+  title Pasco — main page
+  meta(name='description', content='')
+
+//- block append head
+//-   link(rel='stylesheet', href='css/some.css')
+
+block header
+  +page-header()
+    +logo('/')
+      img(src='img/demo-logo.svg', alt='Logo', width='64', height='15')
+    +main-nav('10')
+
+block content
+  +b.BUTTON.button
+    span Button
+
+  +btn('hello', 'there hi')
+
+block footer
+  +page-footer()
+
+//- block append page-bottom
+//-   script(src='js/some.js')
