@@ -6,11 +6,14 @@
   $block-name:                &; // #{$block-name}__element
 
   @include pd($typo-margin-vertical);
+  display: flex;
+  flex-direction: column;
   width: 100%;
-  max-width: 300px;
+  max-width: 260px;
 
   border: 1px solid $border-color;
   border-radius: $border-radius;
+  background-color: $white;
   padding-bottom: $typo-margin-vertical * 3;
 
   & > :not(:last-child) {
@@ -32,9 +35,11 @@
   }
 
   .field-radio {
+    width: 100%;
 
     &__name { // label
       display: flex;
+      justify-content: center;
     }
 
     &__name-text {
@@ -70,11 +75,13 @@
   }
 
   &__list {
+    flex: 1 0 auto;
+
     list-style-type: none;
   }
 
-  &__feature {
-    @include mg-bottom($typo-margin-vertical / 2); // li
+  &__feature { // li
+    @include mg-bottom($typo-margin-vertical / 2);
     position: relative;
 
     padding-left: 0.75em;
@@ -106,6 +113,32 @@
       flex-direction: column;
       align-items: center;
       padding-top: $typo-margin-vertical;
+    }
+  }
+
+  &--featured {
+    position: relative;
+
+    box-shadow: 0 -4px 8px -4px rgba(#000, 0.25);
+
+    &:not([data-text=''])::before {
+      @include size(100%, 3.5em);
+      content: attr(data-text);
+      position: absolute;
+      top: -3em;
+      left: 0;
+      z-index: -1;
+
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      padding-bottom: 0.5em;
+
+      color: $white;
+      text-transform: uppercase;
+
+      background-color: $color-main;
+      border-radius: $border-radius $border-radius 0 0;
     }
   }
 }

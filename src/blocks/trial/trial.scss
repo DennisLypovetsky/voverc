@@ -5,6 +5,7 @@
 .trial {
 
   $block-name:                &; // #{$block-name}__element
+  padding-top: 200px;
 
   &__list {
     list-style-type: none;

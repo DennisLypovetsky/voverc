@@ -19,8 +19,52 @@ block content
       +e.OL.list
         +e.LI.item
           +b.UL.plan
+
             +e.LI.item
               +b.ARTICLE.card
+                +e.H3.title Essentials™
+                +e.UL.list
+                  +e.LI.feature Up to 10 users
+                  +e.LI.feature Toll-free or local number
+                  +e.LI.feature 100 toll-free min/mo
+                  +e.LI.feature 4 people per video meeting
+                +e.wrapper
+                  +e.P.text
+                    b Price after the trial
+                  +e.P.text--price from #[b $ 29.99] /user/month
+                +e.wrapper--select
+                  +b.field-radio
+                    +e.input-wrap--trial
+                      +e.LABEL.name
+                        +e.INPUT.input(type='radio', name='radio')
+                        +e.SPAN.name-text
+                        +e.SPAN.name-text--label Select this plan
+                        +btn('Continue', 'main')(href='/')
+
+            +e.LI.item
+              +b.ARTICLE.card
+                +e.H3.title Standard™
+                +e.UL.list
+                  +e.LI.feature Unlimited users
+                  +e.LI.feature Toll-free or local number
+                  +e.LI.feature 1,000 toll-free min/mo
+                  +e.LI.feature 4 people per video meeting
+                  +e.LI.feature Unlimited internet fax
+                +e.wrapper
+                  +e.P.text
+                    b Price after the trial
+                  +e.P.text--price from #[b $ 34.99] /user/month
+                +e.wrapper--select
+                  +b.field-radio
+                    +e.input-wrap--trial
+                      +e.LABEL.name
+                        +e.INPUT.input(type='radio', name='radio')
+                        +e.SPAN.name-text
+                        +e.SPAN.name-text--label Select this plan
+                        +btn('Continue', 'main')(href='/')
+
+            +e.LI.item
+              +b.ARTICLE.card--featured(data-text='Most popular')
                 +e.H3.title Premium™
                 +e.UL.list
                   +e.LI.feature Unlimited users
@@ -32,6 +76,30 @@ block content
                   +e.P.text
                     b Price after the trial
                   +e.P.text--price from #[b $ 44.99] /user/month
+                +e.wrapper--select
+                  +b.field-radio
+                    +e.input-wrap--trial
+                      +e.LABEL.name
+                        +e.INPUT.input(type='radio', name='radio')
+                        +e.SPAN.name-text
+                        +e.SPAN.name-text--label Select this plan
+                        +btn('Continue', 'main')(href='/')
+
+            +e.LI.item
+              +b.ARTICLE.card
+                +e.H3.title Ultimate™
+                +e.UL.list
+                  +e.LI.feature Unlimited users
+                  +e.LI.feature Toll-free or local number
+                  +e.LI.feature 2,500 toll-free min/mo
+                  +e.LI.feature 75 people per video meeting
+                  +e.LI.feature Unlimited internet fax
+                  +e.LI.feature Automatic call recording
+                  +e.LI.feature Voicemail-to-text
+                +e.wrapper
+                  +e.P.text
+                    b Price after the trial
+                  +e.P.text--price from #[b $ 59.99] /user/month
                 +e.wrapper--select
                   +b.field-radio
                     +e.input-wrap--trial

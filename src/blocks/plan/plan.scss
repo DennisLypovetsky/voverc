@@ -5,5 +5,16 @@
 .plan {
 
   $block-name:                &; // #{$block-name}__element
+
+  display: grid;
+  grid-template-columns: repeat(auto-fill, 260px);
+  grid-gap: $typo-margin-vertical $typo-margin-vertical / 2;
+
   list-style-type: none;
+
+  &__item {
+    z-index: 1;
+
+    display: flex;
+  }
 }

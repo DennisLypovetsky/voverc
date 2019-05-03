@@ -4,6 +4,7 @@
 
 .field-radio {
 
+  $block-name:                &; // #{$block-name}__element
   display: block;
   // margin-bottom: $typo-margin-vertical;
 
@@ -198,6 +199,4 @@
   &__help-text {
     @include field-help-text;
   }
-
-  $block-name:                &; // #{$block-name}__element
 }
