@@ -1,16 +1,19 @@
-// В этом файле должны быть стили для БЭМ-блока logo, его элементов,
+// В этом файле должны быть стили для БЭМ-блока feature-list, его элементов,
 // модификаторов, псевдоселекторов, псевдоэлементов, @media-условий...
 // Очередность: http://nicothin.github.io/idiomatic-pre-CSS/#priority
 
-.logo {
+.feature-list {
 
   $block-name:                &; // #{$block-name}__element
 
-  display: block;
+  list-style-type: none;
 
-  white-space: nowrap;
+  &__feature {
 
-  img {
-    display: block;
+    .icon {
+      margin-right: 0.7em;
+
+      fill: #ffa500; // ?
+    }
   }
 }

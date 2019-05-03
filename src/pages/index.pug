@@ -8,16 +8,49 @@ block meta
 //-   link(rel='stylesheet', href='css/some.css')
 
 block header
-  //- +page-header()
-    +logo('/')
-      img(src='img/demo-logo.svg', alt='Logo', width='64', height='15')
-    +main-nav('10')
+  +b.HEADER.header
+    +e.inner.inner
+      +logo()
+        img(src='img/logo.png', alt='Voverc logo', width='100', height='26')
+
+      +e.ADDRESS.address
+        +e.A.link(href='tel:7783238486') 778-323-8486
+
+      +e.A.link--chat(href='')
+        +icon('speech-bubble', '16', '16')
+        +e.SPAN.text Sales Chat
 
 block content
   +b.SECTION.trial
     +e.inner.inner
-      +e.OL.list
+      +e.OL.list-steps
+        +e.LI.step--1.--complete
+          +e.wrapper--step
+            +icon('check-mark', '21', '21')
+            span Choose number
+        +e.LI.step--2.--current
+          +e.wrapper--step
+            +icon('clipboard', '21', '21')
+            span Choose plan
+        +e.LI.step--3
+          +e.wrapper--step
+            +icon('group', '24', '24')
+            span Add users
+        +e.LI.step--4
+          +e.wrapper--step
+            +icon('order', '21', '21')
+            span Checkout
+
+      +e.OL.list-content
         +e.LI.item
+        +e.LI.item--current
+          +e.HEADER.heading
+            +e.H2.title Select a plan for your trial
+            +b.info
+              +e.I.title i
+              +e.wrapper
+                +e.P.text Some helpful information
+
           +b.UL.plan
 
             +e.LI.item
@@ -108,15 +141,25 @@ block content
                         +e.SPAN.name-text
                         +e.SPAN.name-text--label Select this plan
                         +btn('Continue', 'main')(href='/')
+        +e.LI.item
+        +e.LI.item
 
+  +b.SECTION.features
+    +e.inner.inner
+      +e.HEADER.header
+        +e.H2.title A complete phone system
 
-
+      +b.UL.feature-list
+        - for (var i = 0; i < 24; i++)
+          +e.LI.feature
+            +icon('cloud', '16', '16')
+            +e.SPAN.title Some feature
 
 
   //- +btn('hello')
 
-block footer
-  +page-footer()
+//- block footer
+//-   +page-footer()
 
 //- block append page-bottom
 //-   script(src='js/some.js')

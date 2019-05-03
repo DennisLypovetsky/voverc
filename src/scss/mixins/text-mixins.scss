@@ -18,16 +18,26 @@
 
 // unsetting <button> browser styles
 @mixin unbutton {
+  display: unset;
+  min-width: unset;
+  max-width: unset;
+  padding: unset;
 
   font: inherit;
+  color: inherit;
 
   border: unset;
-
   background-color: unset;
-  padding-left: unset;
-  padding-right: unset;
+  border-radius: unset;
 
-  &:hover {
+  &:hover,
+  &:focus,
+  &:active {
+    color: inherit;
+
+    background-color: unset;
+    box-shadow: unset;
+
     cursor: pointer;
   }
 }

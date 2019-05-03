@@ -1,0 +1,75 @@
+// В этом файле должны быть стили для БЭМ-блока info, его элементов,
+// модификаторов, псевдоселекторов, псевдоэлементов, @media-условий...
+// Очередность: http://nicothin.github.io/idiomatic-pre-CSS/#priority
+
+.info {
+
+  $block-name:                &; // #{$block-name}__element
+
+  position: relative;
+
+  margin-left: 1em;
+
+  cursor: help;
+
+  &:hover,
+  &:focus {
+
+    .info__wrapper {
+      visibility: visible;
+      opacity: 1;
+
+      transition: opacity $transition-time;
+    }
+  }
+
+  &::before {
+    @include size(32px); // 200%
+
+    content: '';
+    position: absolute;
+    top: -50%;
+    left: -50%;
+  }
+
+  &__title {
+    @include round(16px);
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    // padding-right: 0.1em; // vissually middle in chrome
+
+    font-size: 0.75em;
+    font-style: italic;
+    font-weight: 700;
+    color: $white;
+
+    background-color: $gray-lighten;
+
+    user-select: none;
+  }
+
+  &__wrapper {
+    position: absolute;
+    top: -2.75em;
+    left: 1.1em;
+    z-index: 2;
+
+    display: flex;
+    width: auto;
+    padding: 0.5em;
+
+    visibility: hidden;
+    opacity: 0;
+    background-color: $white;
+    border: 1px solid $border-color;
+    border-radius: $border-radius $border-radius $border-radius 0;
+
+    cursor: default;
+  }
+
+  &__text {
+    width: 180px;
+  }
+}

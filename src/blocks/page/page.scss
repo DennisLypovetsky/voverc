@@ -32,16 +32,9 @@
   min-width: 320px;
   min-height: 100%;
 
-  &__inner {
-    min-height: 100vh;
-    display: flex;
-    flex-direction: column;
-
-    overflow: hidden;
-  }
-
   &__content {
-    flex-grow: 1;
+    min-height: 100vh;
+    overflow: hidden;
   }
 
   &__footer-wrapper {
@@ -168,16 +161,16 @@ a {
   //   color: $link-color--hover;
   // }
 
-  &[href^="tel:"] {
+  // &[href^="tel:"] {
 
-    // На больших экранах телефоны-ссылки делаем обычным текстом
-    @media (min-width: $screen-xl) {
-      white-space: nowrap;
-      pointer-events: none;
-      text-decoration: inherit;
-      color: inherit;
-    }
-  }
+  //   // На больших экранах телефоны-ссылки делаем обычным текстом
+  //   @media (min-width: $screen-xl) {
+  //     white-space: nowrap;
+  //     pointer-events: none;
+  //     text-decoration: inherit;
+  //     color: inherit;
+  //   }
+  // }
 }
 
 hr {
