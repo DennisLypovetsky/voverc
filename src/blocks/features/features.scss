@@ -6,6 +6,9 @@
 
   $block-name:                &; // #{$block-name}__element
 
+  padding-top: $typo-margin-vertical;
+  padding-bottom: $typo-margin-vertical * 5;
+
   color: $gray-lightest;
 
   background-color: $text-color;
@@ -13,8 +16,9 @@
   &__header {
     display: flex;
     justify-content: center;
-    padding-top: 1em;
-    padding-bottom: 1em;
+    padding-top: $typo-margin-vertical;
+    padding-bottom: $typo-margin-vertical;
+    margin-bottom: $typo-margin-vertical;
 
     border-bottom: 2px solid $gray;
   }
@@ -24,6 +28,10 @@
 
     font-size: 24px;
     font-weight: 400;
+    text-align: center;
+  }
+
+  &__text {
     text-align: center;
   }
 }

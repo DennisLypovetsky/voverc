@@ -6,12 +6,23 @@
 
   $block-name:                &; // #{$block-name}__element
 
+  // display: grid;
+  // grid-template-columns: repeat(auto-fit, minmax(30%, 1fr));
+  columns: 3 300px;
+  margin-bottom: $typo-margin-vertical * 2;
+
   list-style-type: none;
 
   &__feature {
+    position: relative;
+
+    max-width: 360px;
+    padding-left: calc(0.7em + 1em);
 
     .icon {
-      margin-right: 0.7em;
+      position: absolute;
+      top: calc(16px / 4);
+      left: 0;
 
       fill: #ffa500; // ?
     }
