@@ -2,4 +2,4 @@ Used [NTH-start-project](https://github.com/nicothin/NTH-start-project) for a st
 
 Use [link](https://dennislypovetsky.github.io/voverc/) in the description to checkout the work or go to [src/blocks](https://github.com/DennisLypovetsky/voverc/tree/master/src/blocks) to see the code.
 
-I cleaned up a bit to make it more convinient and delete unused folders from the starter kit.
+I cleaned up a bit to make it more convinient and delete unused folders from the starter kit but there is still may be unused blocks.
